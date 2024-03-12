@@ -35,3 +35,25 @@ IEnumerable<string> departmentIds_v2 =
     select _employee.Departament.Name;              //выборка
 
 departmentIds_v2.ToList().ForEach(item => Console.WriteLine(item));
+
+
+
+//Distinct
+//Удаление дубликатов
+string[] soft = { "Microsoft", "Google", "Apple", "Microsoft", "Google" };
+IEnumerable<string> softWithoutDuplicates = soft.Distinct();
+
+
+
+//Take
+//Взять первые 3 элемента
+IEnumerable<string> firstThree = soft.Take(3);
+
+//Взять элементы с 1 по 5(не включительно)
+IEnumerable<string> secondThree = soft.Take(new Range ( 1, 5 ));
+
+
+//Skip
+IEnumerable<string> skip = soft.Skip(3);
+
+;
