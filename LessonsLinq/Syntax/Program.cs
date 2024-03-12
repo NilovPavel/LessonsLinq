@@ -20,6 +20,7 @@ List<Employee> employees = new List<Employee>
 Console.WriteLine("Вывод коллекции:");
 employees.ForEach(item => Console.WriteLine(item.ToString()));
 
+//Select
 
 //1 вариант набора синтаксиса
 IEnumerable<int> departmentIds_v1 = employees.Select(item => item.Departament.ID);
@@ -31,7 +32,75 @@ departmentIds_v1.ToList().ForEach(item => Console.WriteLine(item + "\t"));
 Console.WriteLine("Вывод коллекции отделов сотрудников(вариант 2):");
 IEnumerable<string> departmentIds_v2 = 
     from _employee in employees                     //_employee - alias коллекции
-    where _employee.Departament.Name.Length > 12    //условие выборки
     select _employee.Departament.Name;              //выборка
 
 departmentIds_v2.ToList().ForEach(item => Console.WriteLine(item));
+
+
+//Where 
+
+//1 вариант набора синтаксиса
+Console.WriteLine("where(вариант 1):");
+IEnumerable<Employee> employee_v1 = employees.Where<Employee>(item => item.Name.Equals("Иван"));
+
+//2 вариант набора синтаксиса
+Console.WriteLine("where(вариант 2):");
+IEnumerable<Employee> employee_v2 =
+    from _employee in employees                     //_employee - alias коллекции
+    where _employee.Name.Equals("Иван")             //условие выборки
+    select _employee;                               //выборка
+
+
+
+//Order by
+
+//1 вариант набора синтаксиса
+Console.WriteLine("order by(вариант 1):");
+employee_v1 = employees.OrderBy(item => item.Name)/*.OrderByDescending(item => item.Name)*/;
+
+//2 вариант набора синтаксиса
+Console.WriteLine("order by(вариант 2):");
+employee_v2 =
+    from _employee in employees                     //_employee - alias коллекции
+    orderby _employee.Name                          //ключ сортировки
+    /*descending*/
+    select _employee;                               //выборка
+
+
+//Order by
+
+//1 вариант набора синтаксиса
+Console.WriteLine("order by(вариант 1):");
+employee_v1 = employees
+    .OrderBy(item => item.Name);
+    //.OrderByDescending(item => item.Name);
+
+//2 вариант набора синтаксиса
+Console.WriteLine("order by(вариант 2):");
+employee_v2 =
+    from _employee in employees                     //_employee - alias коллекции
+    orderby _employee.Name                          //ключ сортировки
+    //descending                                    //убывание/возрастание
+    select _employee;                               //выборка
+
+//ThenBy
+//1 вариант набора синтаксиса
+Console.WriteLine("order by(вариант 1):");
+
+//Добавить идентичного пользователя с другим возрастом
+employees.Add(new Employee { Name = "Иван", Age = 21, Departament = departaments[0] });
+
+employee_v1 = employees.OrderBy(item => item.Name)
+    .ThenBy(item => item.Age);
+    //.ThenByDescending(item => item.Age);
+
+//2 вариант набора синтаксиса
+Console.WriteLine("order by(вариант 2):");
+employee_v2 =
+    from _employee in employees                     //_employee - alias коллекции
+    orderby _employee.Name                          //ключ сортировки
+    , _employee.Age                                 //Дополнительный ключ сортировки
+    /*descending*/
+    select _employee;                               //выборка
+
+;
