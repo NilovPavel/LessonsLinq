@@ -103,4 +103,17 @@ employee_v2 =
     /*descending*/
     select _employee;                               //выборка
 
+
+//GroupBy
+//1 вариант набора синтаксиса
+IEnumerable<string> departmentNames_v1 = (IEnumerable<string>) employees.GroupBy(item => item.Departament.Name);
+
+//2 вариант набора синтаксиса
+Console.WriteLine("order by(вариант 2):");
+IEnumerable<Employee> departmentNames_v2 =
+    (IEnumerable<Employee>)(from _employee in employees                     //_employee - alias коллекции
+    group _employee by _employee.Departament.Name)   //ключ сортировки
+    /*descending*/
+    ;                               //выборка
+
 ;
