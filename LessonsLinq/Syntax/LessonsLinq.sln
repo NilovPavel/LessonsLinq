@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TwoCollections", "..\TwoCol
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SingleResult", "..\SingleResult\SingleResult.csproj", "{0EF48DF7-828C-464F-A895-B13CAC29798C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aggregation", "..\Aggregation\Aggregation.csproj", "{78E0970A-88C9-4134-A4F0-8D5662DDA554}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{0EF48DF7-828C-464F-A895-B13CAC29798C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0EF48DF7-828C-464F-A895-B13CAC29798C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0EF48DF7-828C-464F-A895-B13CAC29798C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78E0970A-88C9-4134-A4F0-8D5662DDA554}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78E0970A-88C9-4134-A4F0-8D5662DDA554}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78E0970A-88C9-4134-A4F0-8D5662DDA554}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78E0970A-88C9-4134-A4F0-8D5662DDA554}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
