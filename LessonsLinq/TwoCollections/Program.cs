@@ -32,7 +32,7 @@ string[] soft = { "Microsoft", "Google", "Apple" };
 string[] hard = { "Apple", "IBM", "Samsung" };
 
 //Union
-IEnumerable<string> unionCompamies = soft.Union(hard);
+IEnumerable<string> unionCompanies = soft.Union(hard);
 
 //Concat
 IEnumerable<string> concatCompanies = soft.Concat(hard);

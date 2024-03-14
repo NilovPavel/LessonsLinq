@@ -1,5 +1,6 @@
 ﻿//Chunk
 using NewOpportunities;
+using System.Collections.Generic;
 
 List<Movie> movies = new List<Movie>
 {
@@ -36,7 +37,13 @@ Console.WriteLine($"The count for Custom One = {theCountCustom}");
 
 
 //Three way zipping
+int[] numbers = { 1, 2, 3, 4 };
+string[] words = { "one", "two", "three" };
 
+var numbersAndWords = 
+    numbers.Zip(
+        words, 
+        (first, second) => new { Number = first, Word = second });
 
 
 //MaxBy
@@ -46,11 +53,17 @@ Movie minRatioMovie = movies.MinBy(item => item.Rating);
 
 
 //ElementAt
-Movie movie = movies.ElementAt(new Index (1, false));
-movie = movie.ElementAt(new Index(0, true));
+Movie movie = movies.ElementAt(2);
+movie = movies.ElementAt(new Index (1, false));
+movie = movies.ElementAt(new Index(1, true));
 
 //Показать эксепшен
 //movie = movies.ElementAt (new Index (0, true));
+
+//Take
+IEnumerable<Movie> _movies = movies.Take(4);
+
+_movies = movies.Take(new Range (0, 4));
 
 ;
 record Movie(string Name, int ReleaseYear, float Rating);
