@@ -9,9 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Predicates", "..\Predicates
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TwoCollections", "..\TwoCollections\TwoCollections.csproj", "{0732D986-2C92-4B7C-9424-F02611DE81D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SingleResult", "..\SingleResult\SingleResult.csproj", "{0EF48DF7-828C-464F-A895-B13CAC29798C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SingleResult", "..\SingleResult\SingleResult.csproj", "{0EF48DF7-828C-464F-A895-B13CAC29798C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aggregation", "..\Aggregation\Aggregation.csproj", "{78E0970A-88C9-4134-A4F0-8D5662DDA554}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aggregation", "..\Aggregation\Aggregation.csproj", "{78E0970A-88C9-4134-A4F0-8D5662DDA554}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewOpportunities", "..\NewOpportunities\NewOpportunities.csproj", "{1ED54BCE-F1C4-4BB8-A545-0E4282CCE38D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{78E0970A-88C9-4134-A4F0-8D5662DDA554}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78E0970A-88C9-4134-A4F0-8D5662DDA554}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78E0970A-88C9-4134-A4F0-8D5662DDA554}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1ED54BCE-F1C4-4BB8-A545-0E4282CCE38D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1ED54BCE-F1C4-4BB8-A545-0E4282CCE38D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1ED54BCE-F1C4-4BB8-A545-0E4282CCE38D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1ED54BCE-F1C4-4BB8-A545-0E4282CCE38D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
