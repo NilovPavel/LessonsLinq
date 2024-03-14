@@ -37,24 +37,6 @@ IEnumerable<string> departmentIds_v2 =
 departmentIds_v2.ToList().ForEach(item => Console.WriteLine(item));
 
 
-//Distinct
-//Удаление дубликатов
-string[] soft = { "Microsoft", "Google", "Apple", "Microsoft", "Google" };
-IEnumerable<string> softWithoutDuplicates = soft.Distinct();
-
-
-
-//Take
-//Взять первые 3 элемента
-IEnumerable<string> firstThree = soft.Take(3);
-
-//Взять элементы с 1 по 5(не включительно)
-IEnumerable<string> secondThree = soft.Take(new Range ( 1, 5 ));
-
-
-//Skip
-IEnumerable<string> skip = soft.Skip(3);
-
 //Where 
 
 //1 вариант набора синтаксиса
@@ -70,22 +52,7 @@ IEnumerable<Employee> employee_v2 =
 
 
 
-//Order by
-
-//1 вариант набора синтаксиса
-Console.WriteLine("order by(вариант 1):");
-employee_v1 = employees.OrderBy(item => item.Name)/*.OrderByDescending(item => item.Name)*/;
-
-//2 вариант набора синтаксиса
-Console.WriteLine("order by(вариант 2):");
-employee_v2 =
-    from _employee in employees                     //_employee - alias коллекции
-    orderby _employee.Name                          //ключ сортировки
-    /*descending*/
-    select _employee;                               //выборка
-
-
-//Order by
+//Order by 
 
 //1 вариант набора синтаксиса
 Console.WriteLine("order by(вариант 1):");
@@ -103,7 +70,6 @@ employee_v2 =
 
 //ThenBy
 //1 вариант набора синтаксиса
-Console.WriteLine("order by(вариант 1):");
 
 //Добавить идентичного пользователя с другим возрастом
 employees.Add(new Employee { Name = "Иван", Age = 21, Departament = departaments[0] });
@@ -113,7 +79,6 @@ employee_v1 = employees.OrderBy(item => item.Name)
     //.ThenByDescending(item => item.Age);
 
 //2 вариант набора синтаксиса
-Console.WriteLine("order by(вариант 2):");
 employee_v2 =
     from _employee in employees                     //_employee - alias коллекции
     orderby _employee.Name                          //ключ сортировки
@@ -124,14 +89,31 @@ employee_v2 =
 
 //GroupBy
 //1 вариант набора синтаксиса
-IEnumerable<string> departmentNames_v1 = (IEnumerable<string>) employees.GroupBy(item => item.Departament.Name);
+var departmentNames_v1 =  employees.GroupBy(item => item.Departament.Name);
 
 //2 вариант набора синтаксиса
-Console.WriteLine("order by(вариант 2):");
-IEnumerable<Employee> departmentNames_v2 =
-    (IEnumerable<Employee>)(from _employee in employees                     //_employee - alias коллекции
+var departmentNames_v2 =
+    (from _employee in employees                     //_employee - alias коллекции
     group _employee by _employee.Departament.Name)   //ключ сортировки
-    /*descending*/
     ;                               //выборка
+
+
+//Distinct
+//Удаление дубликатов
+string[] soft = { "Microsoft", "Google", "Apple", "Microsoft", "Google" };
+IEnumerable<string> softWithoutDuplicates = soft.Distinct();
+
+
+//Take
+//Взять первые 3 элемента
+IEnumerable<string> firstThree = soft.Take(3);
+
+
+//Взять элементы с 1 по 5(не включительно)
+IEnumerable<string> secondThree = soft.Take(new Range(1, 5));
+
+
+//Skip
+IEnumerable<string> skip = soft.Skip(3);
 
 ;
