@@ -57,25 +57,27 @@ IEnumerable<Employee> employee_v2 =
 //1 вариант набора синтаксиса
 Console.WriteLine("order by(вариант 1):");
 employee_v1 = employees
-    .OrderBy(item => item.Name);
-    //.OrderByDescending(item => item.Name);
+    //.OrderBy(item => item.Name);
+    .OrderByDescending(item => item.Name);
 
 //2 вариант набора синтаксиса
 Console.WriteLine("order by(вариант 2):");
 employee_v2 =
     from _employee in employees                     //_employee - alias коллекции
     orderby _employee.Name                          //ключ сортировки
-    //descending                                    //убывание/возрастание
+    descending                                      //убывание/возрастание
     select _employee;                               //выборка
 
 //ThenBy
 //1 вариант набора синтаксиса
 
 //Добавить идентичного пользователя с другим возрастом
+employees.Add(new Employee { Name = "Иван", Age = 21, Departament = departaments[1] });
 employees.Add(new Employee { Name = "Иван", Age = 21, Departament = departaments[0] });
 
 employee_v1 = employees.OrderBy(item => item.Name)
-    .ThenBy(item => item.Age);
+    .ThenBy(item => item.Age)
+    .ThenBy(item => item.Departament.ID);
     //.ThenByDescending(item => item.Age);
 
 //2 вариант набора синтаксиса
@@ -100,6 +102,9 @@ var departmentNames_v2 =
 
 //Distinct
 //Удаление дубликатов
+
+IEnumerable<Employee> tempEmpl = employees.Distinct(new EmplEqualityComparer());
+
 string[] soft = { "Microsoft", "Google", "Apple", "Microsoft", "Google" };
 IEnumerable<string> softWithoutDuplicates = soft.Distinct();
 
@@ -110,7 +115,7 @@ IEnumerable<string> firstThree = soft.Take(3);
 
 
 //Взять элементы с 1 по 5(не включительно)
-IEnumerable<string> secondThree = soft.Take(new Range(1, 5));
+IEnumerable<string> secondThree = soft.Take(new Range(1, soft.Length));
 
 
 //Skip

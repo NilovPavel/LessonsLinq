@@ -4,6 +4,7 @@ Person[] people =
 {
     new Person("Tom", "Microsoft"), new Person("Sam", "Google"),
     new Person("Bob", "JetBrains"), new Person("Mike", "Microsoft"),
+    new Person("Mike2", "Microsoft1")
 };
 
 Company[] companies =
@@ -19,6 +20,7 @@ Company[] companies =
 var var1 = from p in people
                 join c in companies on p.Company equals c.Title
                 select new { Name = p.Name, Company = c.Title, Language = c.Language };
+
 //Var2
 var var2 = people.Join(
     companies, 

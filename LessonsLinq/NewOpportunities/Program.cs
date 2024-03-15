@@ -55,7 +55,7 @@ Movie minRatioMovie = movies.MinBy(item => item.Rating);
 //ElementAt
 Movie movie = movies.ElementAt(2);
 movie = movies.ElementAt(new Index (1, false));
-movie = movies.ElementAt(new Index(1, true));
+movie = movies.ElementAt(new Index (1, true));
 
 //Показать эксепшен
 //movie = movies.ElementAt (new Index (0, true));

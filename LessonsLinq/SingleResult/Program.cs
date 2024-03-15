@@ -29,7 +29,7 @@ signle = people.SingleOrDefault(item => item.Equals("Kate"));
 string last = people.Last();
 
 //Last Exception
-//last = people.Last(item => item.Equals("Kate"));
+last = people.Last(item => item.Equals("Kate"));
 
 //LastOrDefault
 last = people.LastOrDefault(item => item.Equals("Kate"));

@@ -1,7 +1,7 @@
 ﻿//Any
 using System.ComponentModel;
 
-string[] people = { "Tom", "Tim", "Bob", "Sam" };
+string[] people = { "Tom", "Tim", "Bob", "Samf" };
 
 //Существуют ли элементы, начинающиеся с символа А
 bool startT = people.Any(item => item.StartsWith("A"));

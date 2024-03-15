@@ -10,6 +10,9 @@ int sum = numbers.Sum();
 int min = numbers.Min();  
 
 //Average
-int max = numbers.Max(); 
+int max = numbers.Max();
+
+int avg = (int) numbers.Average();
+
 
 ;
