@@ -17,7 +17,7 @@ List<string> takeWhile = words.TakeWhile(
     item => item.Length > 2
     ).ToList();
 
-//Chunk (новая возможность C#9.0)
+//Chunk
 List<string[]> chunks = words.Chunk(2).ToList();
 
 ;
