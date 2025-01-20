@@ -11,7 +11,11 @@
 List<Student> orderResult;
 
 //Undeclare
-orderResult = (List<Student>)students.OrderBy(item => item.StudentId).ToList();
+orderResult = students.OrderBy(
+    item => item.StudentId
+    ).ToList();
+
+students.Order(new StudComparer());
 
 //Declare 
 orderResult = (from student in students
@@ -59,3 +63,5 @@ orderResult = (from item in
 //Reverse
 students.Reverse();
 ;
+
+//IComparer<Student> comparer = new StudComparer()

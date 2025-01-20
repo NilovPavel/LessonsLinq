@@ -14,6 +14,9 @@ int a = nums.Count();
 double b = numm.Average();
 double c = numm.Max();
 
+/*Демонстрация работы метод расширения*/
+Func<int, string> convert = (x) => x.ToString();
+IEnumerable<string> converts = nums.Convert(convert);
 
 //3. Как работает селектор
 //По сути просто как указатель на поле типа
@@ -35,10 +38,14 @@ class Group
 //4. Методы расширения
 public static class Extents
 {
-    public static IEnumerable<TResult> Convert<TSource, TResult>(
-            this IEnumerable<TSource> source
-        , Func<TSource, TResult> selector)
+    public 
+        static                                                  /*Метод должен быть статичным*/
+        IEnumerable<TResult>                                    /*Возвращаемый тип*/
+        Convert<TSource, TResult>(
+            this IEnumerable<TSource> source                    /*Обозначение типа, для которого пишется расширение*/
+        , Func<TSource, TResult> selector)                      /*Делегат. Не обязателен для метода расширения.*/
     {
-        return source.Select(item => selector.Invoke(item));
+        return source.Select(item => selector.Invoke(item));    /*операция, описывающая бизнес-логику*/
     }
 }
+

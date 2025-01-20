@@ -3,12 +3,23 @@ using Grouping;
 
 List<int> numbers = [35, 44, 200, 84, 3987, 4, 199, 329, 446, 208];
 
+
+
 IEnumerable<IGrouping<int, int>> query = (from number in numbers
-                                         group number by number % 2).ToList();
+                                         group number by number % 2);
 
 IEnumerable<IGrouping<int, int>> query2 = numbers
     .GroupBy(number => number % 2).ToList();
 
+foreach (IGrouping<int, int> item in query)
+{
+    Console.WriteLine(item.Key);
+    Console.WriteLine("--------------");
+    foreach (int a in item/*IEnumerable<int>*/)
+    {
+        Console.WriteLine(a);
+    }
+}
 
 //ToLookup
 List<Package> packages = new List<Package> { new Package { Company = "Coho Vineyard", Weight = 25.2, TrackingNumber = 89453312L },
