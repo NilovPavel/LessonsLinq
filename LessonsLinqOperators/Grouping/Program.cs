@@ -29,5 +29,16 @@ List<Package> packages = new List<Package> { new Package { Company = "Coho Viney
                                                  new Package { Company = "Wide World Importers", Weight = 33.8, TrackingNumber = 4665518773L } }; ;
 
 Lookup<char, string> lookup = (Lookup<char, string>)packages.ToLookup(p => p.Company[0],
-                                                    p => p.Company + " " + p.TrackingNumber);
+                                                    a => a.Company + " " + a.TrackingNumber);
+
+foreach (var item in lookup)
+{
+    Console.WriteLine(item.Key);
+    foreach (var item2 in item)
+        Console.WriteLine(item2);
+}
+
+//Допускается обращение по ключу
+IEnumerable<string> valueByKey = lookup['C'];
+
 ;
