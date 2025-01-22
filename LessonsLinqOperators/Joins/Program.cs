@@ -29,7 +29,7 @@ var studentsInGroups2 = (from student in students
 //Метод-синтаксис
 var studentsInGroups3 = students.Join(groups,
                                     student => new { student.StudentId, student.GroupId },
-                                    eachGroup => new {eachGroup.StudentId, eachGroup.GroupId }, //Бред, но для демонстрации подойдет
+                                    eachGroup => new { eachGroup.StudentId, eachGroup.GroupId }, //Бред, но для демонстрации подойдет
                                     (student, eachGroup) => new { Name = student.Name, GroupName = eachGroup.Name }).ToList();
 //Декларативный
 var studentsInGroups4 = (from student in students

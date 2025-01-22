@@ -5,7 +5,8 @@ int count = ints.Count(/*item => item > 1*/);
 
 //Average
 List<double> doubles = new List<double> { 1.0, 2.0, 3.0 };
-double avg = ints.Average();
+double avg = doubles.Average();
 
 //Sum
 int sum = ints.Sum();
+;
